@@ -148,8 +148,8 @@ def rediger_contenu_seo(leads):
   return post_defaut, article_defaut
 
 
-def generer_page_web_seo(article_html):
-  print("[+] Étape 3 : Génération de la page web statique (index.html) version Ultime...")
+def generer_page_web_seo(article_html, nombre_leads):
+  print("[+] Étape 3 : Génération de la page web statique (index.html) version Conversion Maximale...")
   date_du_jour = datetime.now().strftime("%d/%m/%Y")
   
   html_template = f"""<!DOCTYPE html>
@@ -184,7 +184,7 @@ def generer_page_web_seo(article_html):
                 </div>
             </div>
             <a href="{GUMROAD_PRODUCT_URL}" target="_blank" class="inline-flex items-center px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-all shadow-lg shadow-blue-600/20">
-                Accéder au fichier
+                Télécharger la base ({nombre_leads} leads)
             </a>
         </div>
     </header>
@@ -196,14 +196,14 @@ def generer_page_web_seo(article_html):
                 <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping mr-2"></span> Édition Hebdomadaire — Semaine du {date_du_jour}
             </div>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
-                Fermez plus de contrats avec des <br/><span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Leads B2B ultra-frais</span>
+                Fermez plus de contrats avec <br/><span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">{nombre_leads} Leads B2B vérifiés</span>
             </h1>
             <p class="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
                 Chaque semaine, accédez aux signaux d'affaires en France (levées de fonds, créations, recrutements) recoupés et validés via l'API officielle.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="{GUMROAD_PRODUCT_URL}" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-base shadow-xl shadow-blue-600/30 hover:scale-105 transition-all">
-                    Télécharger la base complète (CRM-Ready)
+                    Obtenir le fichier CSV complet ({nombre_leads} contacts) 🚀
                 </a>
             </div>
         </div>
@@ -213,16 +213,16 @@ def generer_page_web_seo(article_html):
     <section class="max-w-4xl mx-auto px-6 pb-12">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-md text-center">
-                <div class="text-3xl font-extrabold text-blue-400 mb-1">100%</div>
-                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Vérifié API Gouvernement</div>
+                <div class="text-3xl font-extrabold text-blue-400 mb-1">{nombre_leads}</div>
+                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Leads frais cette semaine</div>
             </div>
             <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-md text-center">
-                <div class="text-3xl font-extrabold text-indigo-400 mb-1">Format CSV</div>
-                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Compatible HubSpot / Salesforce</div>
+                <div class="text-3xl font-extrabold text-indigo-400 mb-1">100%</div>
+                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Vérifiés API Gouvernement</div>
             </div>
             <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-md text-center">
-                <div class="text-3xl font-extrabold text-purple-400 mb-1">Mis à jour</div>
-                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Chaque semaine sans abonnement</div>
+                <div class="text-3xl font-extrabold text-purple-400 mb-1">CRM-Ready</div>
+                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Format CSV Universel</div>
             </div>
         </div>
     </section>
@@ -235,7 +235,7 @@ def generer_page_web_seo(article_html):
                     <h3 class="text-lg font-bold text-white">Aperçu de la structure du fichier</h3>
                     <p class="text-xs text-slate-400">Colonnes incluses dans votre export CSV prêt à l'emploi</p>
                 </div>
-                <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Exemple réel</span>
+                <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">Extrait vérifié</span>
             </div>
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs text-slate-300">
@@ -317,7 +317,7 @@ def generer_page_web_seo(article_html):
 
   with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_template)
-  print("[SUCCÈS] Page web 'index.html' version Ultime générée avec succès !")
+  print("[SUCCÈS] Page web 'index.html' version Conversion Maximale générée avec succès !")
 
 
 def notifier_telegram(texte_ia):
@@ -341,6 +341,6 @@ def notifier_telegram(texte_ia):
 if __name__ == "__main__":
   leads = generer_donnees()
   texte_telegram, article_html = rediger_contenu_seo(leads)
-  generer_page_web_seo(article_html)
+  generer_page_web_seo(article_html, len(leads))
   notifier_telegram(texte_telegram)
-  print("[FIN] Processus terminé ! Votre page web premium et vos leads sont prêts.")
+  print("[FIN] Processus terminé ! Votre page web de conversion est prête.")
