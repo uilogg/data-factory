@@ -131,7 +131,7 @@ def rediger_contenu_seo(leads):
 
 
 def generer_page_web_seo(article_html, nombre_leads):
-  print("[+] Étape 3 : Génération de la page web (Avis & Capture email)...")
+  print("[+] Étape 3 : Génération de la page web ultra-détaillée...")
   date_du_jour = datetime.now().strftime("%d/%m/%Y")
   
   html_template = f"""<!DOCTYPE html>
@@ -139,9 +139,10 @@ def generer_page_web_seo(article_html, nombre_leads):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataFactory B2B — Veille & Leads Qualifiés</title>
+    <title>DataFactory B2B — Veille & Leads Qualifiés ({date_du_jour})</title>
+    <meta name="description" content="Plateforme d'intelligence commerciale et de génération de leads B2B en France. Fichiers CRM-Ready mis à jour chaque semaine.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>body {{ font-family: 'Plus Jakarta Sans', sans-serif; }}</style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased">
@@ -149,29 +150,81 @@ def generer_page_web_seo(article_html, nombre_leads):
     <header class="border-b border-slate-800/60 bg-slate-900/40 backdrop-blur-xl sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="h-11 w-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center font-bold text-xl text-white">D</div>
-                <span class="font-extrabold text-lg bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent block">DataFactory</span>
+                <div class="h-11 w-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center font-bold text-xl text-white shadow-lg">D</div>
+                <div>
+                    <span class="font-extrabold text-lg bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent block">DataFactory</span>
+                    <span class="text-[10px] uppercase tracking-widest text-blue-400 font-semibold block">B2B Intelligence</span>
+                </div>
             </div>
-            <a href="{GUMROAD_PRODUCT_URL}" target="_blank" class="inline-flex px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-lg transition-all">Acheter la base complète</a>
+            <a href="{GUMROAD_PRODUCT_URL}" target="_blank" class="inline-flex px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-lg transition-all">Acheter la base ({nombre_leads} leads)</a>
         </div>
     </header>
 
-    <!-- HERO SECTION (Capture d'email) -->
+    <!-- HERO SECTION -->
     <section class="pt-16 pb-12 text-center px-6">
-        <div class="inline-flex px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">Mise à jour : {date_du_jour}</div>
-        <h1 class="text-4xl sm:text-6xl font-extrabold mb-6">Fermez plus de contrats avec <br/><span class="text-blue-400">{nombre_leads} Leads B2B vérifiés</span></h1>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">Créations d'entreprises, levées de fonds et recrutements en France, prêts pour votre CRM.</p>
+        <div class="inline-flex px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">Mise à jour officielle : Semaine du {date_du_jour}</div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight">Fermez plus de contrats avec <br/><span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">{nombre_leads} Leads B2B vérifiés</span></h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">Chaque semaine, accédez aux signaux d'affaires en France (créations, levées de fonds, recrutements) recoupés et validés par l'API officielle.</p>
         
         <!-- FORMULAIRE DE CAPTURE -->
         <div class="max-w-md mx-auto bg-slate-900/80 p-2 rounded-2xl border border-slate-800 flex flex-col sm:flex-row gap-2 shadow-2xl">
             <input type="email" placeholder="Votre adresse email pro..." class="w-full bg-transparent text-white px-4 py-3 focus:outline-none placeholder-slate-500 text-sm">
-            <button onclick="alert('Inscription réussie ! Vous allez recevoir votre échantillon.')" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm whitespace-nowrap transition-all cursor-pointer">Recevoir 3 leads</button>
+            <button onclick="alert('Inscription réussie ! Vous allez recevoir votre échantillon de 3 leads.')" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm whitespace-nowrap transition-all cursor-pointer">Recevoir 3 leads</button>
         </div>
-        <p class="text-xs text-slate-500 mt-4">Puis 100% de la base disponible sur Gumroad.</p>
+        <p class="text-xs text-slate-500 mt-4">Accès immédiat à l'intégralité de la base sur Gumroad sans abonnement.</p>
+    </section>
+
+    <!-- MÉTHODOLOGIE & SOURCES (NOUVEAU) -->
+    <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 backdrop-blur-xl">
+            <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full bg-blue-500 animate-pulse"></span> Notre Méthodologie de Veille & de Scoring
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+                <div class="bg-slate-950/50 p-5 rounded-2xl border border-slate-800/80">
+                    <div class="text-blue-400 font-bold mb-2 text-base">1. Collecte 24/7</div>
+                    <p class="text-slate-400">Analyse en temps réel des flux RSS de la tech, des annonces légales et des marchés publics français.</p>
+                </div>
+                <div class="bg-slate-950/50 p-5 rounded-2xl border border-slate-800/80">
+                    <div class="text-indigo-400 font-bold mb-2 text-base">2. API Gouvernement</div>
+                    <p class="text-slate-400">Chaque entreprise détectée est croisée avec l'API officielle (SIRET, SIREN et commune vérifiés).</p>
+                </div>
+                <div class="bg-slate-950/50 p-5 rounded-2xl border border-slate-800/80">
+                    <div class="text-purple-400 font-bold mb-2 text-base">3. Format CRM-Ready</div>
+                    <p class="text-slate-400">Structuration propre en CSV universel pour un import en 1 clic dans HubSpot, Salesforce ou Notion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CE QUE CONTIENT EXACTEMENT LE FICHIER (NOUVEAU) -->
+    <section class="max-w-4xl mx-auto px-6 pb-12">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 shadow-2xl">
+            <h3 class="text-xl font-bold text-white mb-6">Que contient le fichier CSV livré ?</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-300">
+                <div class="flex items-start gap-3 bg-slate-950/40 p-4 rounded-xl border border-slate-800/60">
+                    <span class="text-emerald-400 font-bold">✔</span>
+                    <div><strong class="text-white block">Raison Sociale Officielle</strong>Nom légal de l'entreprise tel qu'enregistré en France.</div>
+                </div>
+                <div class="flex items-start gap-3 bg-slate-950/40 p-4 rounded-xl border border-slate-800/60">
+                    <span class="text-emerald-400 font-bold">✔</span>
+                    <div><strong class="text-white block">Numéro SIRET / SIREN</strong>Identifiant officiel pour valider l'existence de la structure.</div>
+                </div>
+                <div class="flex items-start gap-3 bg-slate-950/40 p-4 rounded-xl border border-slate-800/60">
+                    <span class="text-emerald-400 font-bold">✔</span>
+                    <div><strong class="text-white block">Ville & Localisation</strong>Commune exacte du siège social de l'entreprise.</div>
+                </div>
+                <div class="flex items-start gap-3 bg-slate-950/40 p-4 rounded-xl border border-slate-800/60">
+                    <span class="text-emerald-400 font-bold">✔</span>
+                    <div><strong class="text-white block">Poste du Décideur Cible</strong>Rôle clé ciblé (CEO, Fondateur, DRH, Direction).</div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- PREUVE SOCIALE (Témoignages) -->
     <section class="max-w-4xl mx-auto px-6 pb-16">
+        <h3 class="text-xl font-bold text-white mb-6 text-center">Ce que pensent les utilisateurs</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
                 <p class="text-slate-300 text-sm italic mb-4">"Un gain de temps énorme. Les données sont propres et le fait d'avoir le SIRET me permet de lancer mes séquences de cold email dans la minute."</p>
@@ -190,19 +243,42 @@ def generer_page_web_seo(article_html, nombre_leads):
         </div>
     </section>
 
-    <!-- ARTICLE IA -->
+    <!-- ARTICLE IA & TENDANCES -->
     <main class="max-w-4xl mx-auto px-6 pb-20">
         <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 shadow-2xl">
-            <h3 class="text-xl font-bold mb-6 text-blue-400">Analyse & Tendances du Marché</h3>
+            <h3 class="text-xl font-bold mb-6 text-blue-400">Analyse & Tendances du Marché B2B</h3>
             <article class="text-slate-300 space-y-4">{article_html}</article>
         </div>
     </main>
+
+    <!-- FAQ RICHE (NOUVEAU) -->
+    <section class="max-w-4xl mx-auto px-6 pb-24">
+        <h3 class="text-2xl font-bold text-white text-center mb-10">Foire Aux Questions</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+            <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl">
+                <h4 class="font-bold text-white mb-2">Est-ce un abonnement mensuel ?</h4>
+                <p class="text-slate-400">Non ! Il s'agit d'un achat unique par édition hebdomadaire. Vous achetez uniquement les listes dont vous avez besoin, sans engagement.</p>
+            </div>
+            <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl">
+                <h4 class="font-bold text-white mb-2">Comment récupérer mon fichier après l'achat ?</h4>
+                <p class="text-slate-400">Le téléchargement du fichier CSV est instantané via Gumroad dès que votre paiement est validé. Vous le recevez aussi par e-mail.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-900 bg-slate-950 py-12 text-center text-slate-500 text-xs">
+        <div class="max-w-4xl mx-auto px-6 space-y-2">
+            <p class="font-medium text-slate-400">DataFactory B2B — La solution de prospection automatisée en France.</p>
+            <p>&copy; 2026 DataFactory. Tous droits réservés.</p>
+        </div>
+    </footer>
 </body>
 </html>
 """
   with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_template)
-  print("[SUCCÈS] Page web 'index.html' générée avec succès !")
+  print("[SUCCÈS] Page web 'index.html' ultra-détaillée générée avec succès !")
 
 
 def notifier_telegram(texte_ia):
