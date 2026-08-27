@@ -1,28 +1,96 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tendances B2B & Leads Qualifiés - 27/08/2026</title>
-    <meta name="description" content="Veille hebdomadaire des créations d'entreprises, levées de fonds et opportunités B2B en France. Fichiers de prospection CRM-Ready.">
+    <title>DataFactory B2B — Veille & Leads Qualifiés (27/08/2026)</title>
+    <meta name="description" content="Plateforme d'intelligence commerciale et de génération de leads B2B en France. Fichiers CRM-Ready mis à jour chaque semaine.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glow-effect {
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
-    <header class="bg-blue-600 text-white py-10 shadow-md">
-        <div class="max-w-3xl mx-auto px-4 text-center">
-            <h1 class="text-3xl font-extrabold mb-2">Veille & Leads B2B France</h1>
-            <p class="text-blue-100 text-sm">Rapport hebdomadaire automatisé — Semaine du 27/08/2026</p>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-500 selection:text-white">
+    
+    <!-- BACKGROUND GLOW DECORATION -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 glow-effect pointer-events-none"></div>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="relative border-b border-slate-800/60 bg-slate-900/40 backdrop-blur-xl sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="h-11 w-11 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/25 ring-1 ring-white/20">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent block">DataFactory</span>
+                    <span class="text-[10px] uppercase tracking-widest text-blue-400 font-semibold block">Intelligence B2B</span>
+                </div>
+            </div>
+            <a href="https://ksmtech.gumroad.com/l/twmqjn" target="_blank" class="hidden sm:inline-flex items-center px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-all shadow-lg shadow-blue-600/20">
+                Télécharger la base
+            </a>
         </div>
     </header>
-    
-    <main class="max-w-3xl mx-auto px-4 py-10">
-        <article class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 space-y-6">
-            <h2>Tendances B2B de la semaine</h2><p>Découvrez nos analyses et téléchargez notre base qualifiée sur <a href='https://ksmtech.gumroad.com/l/twmqjn'>Gumroad</a>.</p>
-        </article>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-20 pb-12 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6 shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping mr-2"></span> Rapport Hebdomadaire — Semaine du 27/08/2026
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                Boostez vos ventes avec des <br/><span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Leads B2B ultra-qualifiés</span>
+            </h1>
+            <p class="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Accédez chaque semaine aux signaux d'affaires en France : levées de fonds, créations d'entreprises et recrutements prêts pour votre CRM.
+            </p>
+        </div>
+    </section>
+
+    <!-- STATS GRID -->
+    <section class="max-w-4xl mx-auto px-6 pb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-md text-center">
+                <div class="text-3xl font-extrabold text-blue-400 mb-1">100%</div>
+                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Vérifié API Gouvernement</div>
+            </div>
+            <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-md text-center">
+                <div class="text-3xl font-extrabold text-indigo-400 mb-1">CRM-Ready</div>
+                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Format CSV Structuré</div>
+            </div>
+            <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-md text-center">
+                <div class="text-3xl font-extrabold text-purple-400 mb-1">Hebdomadaire</div>
+                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Actualisation Automatique</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN ARTICLE / CONTENT CONTAINER -->
+    <main class="max-w-4xl mx-auto px-6 pb-24">
+        <div class="bg-slate-900/80 border border-slate-800/80 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <article class="space-y-6 text-slate-300 leading-relaxed 
+                [&>h2]:text-2xl sm:[&>h2]:text-3xl [&>h2]:font-bold [&>h2]:text-white [&>h2]:mt-10 [&>h2]:mb-6 [&>h2]:tracking-tight
+                [&>p]:text-slate-300 [&>p]:text-base sm:[&>p]:text-lg [&>p]:mb-4
+                [&>ul]:space-y-3 [&>ul]:my-6 [&>ul>li]:bg-slate-950/40 [&>ul>li]:border [&>ul>li]:border-slate-800/80 [&>ul>li]:p-4 [&>ul>li]:rounded-xl [&>ul>li]:text-slate-300
+                [&>a]:inline-flex [&>a]:items-center [&>a]:justify-center [&>a]:w-full sm:[&>a]:w-auto [&>a]:px-8 [&>a]:py-4 [&>a]:mt-8 [&>a]:rounded-2xl [&>a]:bg-gradient-to-r [&>a]:from-blue-600 [&>a]:to-indigo-600 [&>a]:text-white [&>a]:font-bold [&>a]:text-base [&>a]:shadow-xl [&>a]:shadow-blue-600/30 hover:[&>a]:scale-[1.02] [&>a]:transition-all">
+                <h2>Tendances B2B de la semaine</h2><p>Découvrez nos analyses et téléchargez notre base qualifiée sur <a href='https://ksmtech.gumroad.com/l/twmqjn'>Gumroad</a>.</p>
+            </article>
+        </div>
     </main>
 
-    <footer class="text-center py-6 text-slate-400 text-xs">
-        <p>&copy; 2026 Veille B2B automatisée. Tous droits réservés.</p>
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-900 bg-slate-950 py-12 text-center text-slate-500 text-xs">
+        <div class="max-w-4xl mx-auto px-6 space-y-4">
+            <p class="font-medium text-slate-400">DataFactory B2B — La solution de prospection automatisée en France.</p>
+            <p>&copy; 2026 DataFactory. Tous droits réservés.</p>
+        </div>
     </footer>
 </body>
 </html>
